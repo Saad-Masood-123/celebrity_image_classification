@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Celebrity Face Recognition</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">🌟 Celebrity Face Recognition 🌟</h1>
+
+    <!-- Celebrity showcase -->
+    <div class="celebrity-gallery">
+      <!-- 🔑 Replace image paths with your own celebrity photos -->
+      <div class="celebrity-card">
+        <img src="{{ url_for('static', filename='a.jpg') }}" alt="Babar Azam">
+        <p>Babar Azam</p>
+      </div>
+      <div class="celebrity-card">
+        <img src="{{ url_for('static', filename='c.jpg') }}" alt="Humayun Saeed">
+        <p>Humayun Saeed</p>
+      </div>
+      <div class="celebrity-card">
+        <img src="{{ url_for('static', filename='b.jpg') }}" alt="Imran Khan">
+        <p>Imran Khan</p>
+      </div>
+    </div>
+    <!-- End celebrity showcase -->
+
+    <!-- Upload & Predict -->
+    <form action="/predict" method="post" enctype="multipart/form-data" class="upload-form">
+      <input id="file-upload" type="file" name="file" accept="image/*" required>
+      <button type="submit">Upload & Predict</button>
+    </form>
+
+    {% if error %}
+      <p class="error">{{ error }}</p>
+    {% endif %}
+
+    {% if prediction %}
+      <div class="result">
+        <h2>Prediction Result</h2>
+        <p><b>Celebrity:</b> {{ prediction }}</p>
+        <p><b>Confidence:</b> {{ confidence }}%</p>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>

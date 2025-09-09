@@ -1,0 +1,48 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Datasets (ignore all CSV, images, large files — adjust if needed)
+data/
+*.csv
+*.tsv
+*.json
+*.xlsx
+*.zip
+
+# Trained models
+models/
+*.h5
+*.hdf5
+*.pkl
+*.joblib
+*.pt
+*.pth
+
+# Logs and outputs
+logs/
+*.log
+*.out
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE configs
+.vscode/
+.idea/
+
+# Flask / Django / Streamlit temp files
+instance/
+*.db
+
